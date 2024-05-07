@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Textile Waste Valorization System</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+  </head>
+  <body>
+    <h1>Textile Waste Valorization System</h1>
+    <p>Welcome to the Textile Waste Valorization System!</p>
+
+    <!-- Add blockchain address input box -->
+    <form id="submission-form">
+      <label for="blockchain-address">Blockchain Address:</label>
+      <input type="text" id="blockchain-address" name="blockchain-address" required>
+      <br>
+
+      <!-- Add cryptocurrency selection input box -->
+      <label for="cryptocurrency">Cryptocurrency:</label>
+      <select id="cryptocurrency" name="cryptocurrency" required>
+        <option value="">Select a cryptocurrency</option>
+        <option value="bitcoin">Bitcoin (BTC)</option>
+        <option value="ethereum">Ethereum (ETH)</option>
+        <option value="litecoin">Litecoin (LTC)</option>
+        <option value="bitcoin-cash">Bitcoin Cash (BCH)</option>
+        <option value="cardano">Cardano (ADA)</option>
+      </select>
+      <br>
+
+      <!-- Add textile waste material and weight input boxes -->
+      <div id="textile-material-weight-container">
+        <label for="textile-material">Textile Material:</label>
+        <select id="textile-material" name="textile-material" required>
+          <option value="">Select a material</option>
+          <option value="cotton">Cotton</option>
+          <option value="polyester">Polyester</option>
+          <option value="wool">Wool</option>
+          <option value="silk">Silk</option>
+          <option value="other">Other</option>
+        </select>
+        <label for="textile-weight">Weight (kg):</label>
+        <input type="number" id="textile-weight" name="textile-weight" min="0" step="0.01" required>
+      </div>
+
+      <!-- Add Calculate Incentive button and incentive reward display field -->
+      <button type="button" id="calculate-button">Calculate Incentive</button>
+      <div id="incentive-reward-container"></div>
+
+      <!-- Your existing form elements here -->
+
+      <button type="submit">Submit</button>
+    </form>
+
+    <!-- Add the pop-up window here -->
+    <div id="popup" class="hidden">
+      <div class="popup-inner">
+        <h2>Submission Successful</h2>
+        <p>The incentive has been sent to your blockchain address.</p>
+        <button class="btn" onclick="hidePopup()">OK</button>
+      </div>
+    </div>
+
+    <script src="app.js"></script>
+    <script>
+      // Check if user is logged in
+      const isLoggedIn = () => {
+        const sessionUser = sessionStorage.getItem('user');
+        if (sessionUser) {
+          return true;
+        } else {
+          window.location.href = './auth/login.html';
+        }
+      };
+
+      // Call isLoggedIn function
+      isLoggedIn();
+    </script>
+  </body>
+</html>
+
+

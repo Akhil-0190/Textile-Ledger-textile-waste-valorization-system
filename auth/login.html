@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Textile Waste Valorization System - Login</title>
+    <link rel="stylesheet" type="text/css" href="login-styles.css">
+  </head>
+  <body>
+    <h1>Login</h1>
+    <form id="login-form">
+      <label for="username">Username:</label>
+      <input type="text" id="username" name="username" required>
+      <br>
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" required>
+      <br>
+      <button type="submit">Login</button>
+    </form>
+    <script>
+      const form = document.getElementById('login-form');
+      const usernameInput = document.getElementById('username');
+      const passwordInput = document.getElementById('password');
+
+      form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const username = usernameInput.value;
+        const password = passwordInput.value;
+
+        try {
+          const response = await fetch('/auth/login', {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({ username, password })
+          });
+
+          if (!response.ok) {
+              throw new Error('Invalid username or password');
+          }
+
+          const sessionUser = await response.json();
+          sessionStorage.setItem('user', JSON.stringify(sessionUser.user));
+
+          window.location.href = '../public/index.html'; // Redirect to main interface if login is successful
+          } catch (error) {
+          console.error('Error during login:', error);
+          alert(error.message);
+          }
+      });
+    </script>
+  </body>
+</html>
