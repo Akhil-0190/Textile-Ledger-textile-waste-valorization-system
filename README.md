@@ -19,6 +19,6 @@ Transparent process for tracking collected textiles.
 
 <ins> **Technology Stack:** </ins>
 
-Backend: JavaScript (e.g., Node.js)
+Backend: JavaScript
 
 Frontend: HTML, CSS
