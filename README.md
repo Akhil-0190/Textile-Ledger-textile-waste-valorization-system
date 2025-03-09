@@ -1,7 +1,7 @@
 <ins> **Textile Waste to Crypto Rewards** </ins>
 
 Incentivizing responsible textile disposal with crypto rewards.
-This project offers a user-friendly system that tackles textile waste by rewarding users with cryptocurrency for properly disposing of unwanted textiles. By diverting textiles from landfills, the project promotes a sustainable circular economy.
+This project offers sampel of a user-friendly system that tackles textile waste by rewarding users with cryptocurrency for properly disposing of unwanted textiles. By diverting textiles from landfills, the project promotes a sustainable circular economy.
 
 ---
 
