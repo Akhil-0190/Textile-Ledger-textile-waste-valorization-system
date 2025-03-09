@@ -25,7 +25,7 @@ Frontend: HTML, CSS
 
 ---
 
-Sample inferred outputs:
+Sample outputs:
 
 ![Image1](https://github.com/Akhil-0190/Textile-Ledger-textile-waste-valorization-system/blob/main/sample_execution.jpg)
 
